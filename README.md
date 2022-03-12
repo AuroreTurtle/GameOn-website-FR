@@ -30,6 +30,14 @@ L’équipe de QA veut que je :
 4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie
 
 
+## Tâches à faire
+* Etape 1 - Fermer la modale : Ajouter la fonctionnalité au bouton (x)
+* Etape 2 - Implémenter les entrées du formulaire
+* Etape 3 - Ajouter la validation ou les messages d'erreur
+* Etape 4 - Ajouter la confirmation quand l'envoi est réussi
+* Etape 5 - Tests manuels
+
+
 ## Langages utilisés :
 * HTML5
 * CSS3
@@ -38,6 +46,8 @@ L’équipe de QA veut que je :
 
 ## Compétences évaluées :
 * Programmer en JavaScript
+* Manipuler le DOM avec JavaScript
+* Valider les données d'un formulaire
 
 
 ## Lien vers la page :
