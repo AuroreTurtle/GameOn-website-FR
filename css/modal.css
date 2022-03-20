@@ -46,13 +46,19 @@ img {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .topnav {
     margin-top: 6%;
     margin-bottom: 0;
     margin-left: 30px;
   }
 
+  .header-logo img {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .header-logo img {
     width: 50%;
   }
@@ -71,7 +77,7 @@ img {
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 25px;
   font-family: Roboto, sans-serif;
 }
 
@@ -100,6 +106,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    margin-top: -15px;
   }
 
   .topnav.responsive {
@@ -122,6 +129,7 @@ img {
 @media screen and (max-width: 540px) {
   .topnav a {
     display: none;
+    font-size: 18px;
   }
 
   .topnav a.icon {
@@ -161,7 +169,6 @@ main {
 }
 
 .hero-section {
-  height: 657px;
   border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -255,15 +262,13 @@ main {
   }
 
   .hero-headline {
-    font-size: 2.4rem;
+    font-size: 3.5rem;
     white-space: normal;
     font-weight: 500;
   }
 
   .hero-text {
-    width: unset;
-    font-size: 12px;
-    margin-right: 27%;
+    font-size: 14px;
     margin-top: 30px;
     margin-bottom: 0;
   }
@@ -277,6 +282,27 @@ main {
     display: block;
     margin: 32px auto 10px;
     padding: 12px 35px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero-section {
+    height: 657px;
+  }
+
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .hero-text {
+    width: unset;
+    font-size: 12px;
+    margin-right: 27%;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .hero-section > .btn-signup {
     font-size: 14px;
   }
 }
@@ -609,11 +635,17 @@ footer {
 
 @media screen and (max-width: 800px) {
   footer {
-    margin: 10px;
+    margin: 0;
   }
 
   .copyrights {
     text-align: center;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .copyrights {
     font-size: 10px;
   }
 }
