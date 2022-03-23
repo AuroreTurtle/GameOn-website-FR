@@ -398,6 +398,10 @@ input {
   border: 2px solid #ff4e60;
 }
 
+.formData[data-error-visible="false"] .text-control {
+  border: 2px solid green;
+}
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
