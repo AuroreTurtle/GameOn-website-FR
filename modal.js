@@ -67,6 +67,12 @@ function validate(e) {
 
   let formValidate = true;
 
+  // Regex
+  const prenomRegex = /^[A-Za-z\u00C0-\u00FF]+[ \-']?[[A-Za-z\u00C0-\u00FF]+$/g;
+  const nomRegex = /^[A-Za-z\u00C0-\u00FF]+[ \-']?[[A-Za-z\u00C0-\u00FF]+$/g;
+
+  // expression régulière pour avoir le bon format de la date (à voir à la fin)
+  // const dateRegex = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/g;
   
   // For the firstname
   let prenom = document.forms["reserve"].elements["firstname"]; 
@@ -132,17 +138,17 @@ function validate(e) {
   // console.log(conditionUtilisation.parentNode);
   
 
-  if (prenom.value.length < 2) { 
+  if (prenom.value.length < 2 || prenomRegex.test(prenom.value) === false) { 
     erreurMessagePrenom.dataset.errorVisible = "true";
     formValidate = false; 
   } else {
     erreurMessagePrenom.dataset.errorVisible = "false";
   }
 
-  if (nom.value.length < 2) {  
+  if (nom.value.length < 2 || nomRegex.test(nom.value) === false) {  
     erreurMessageNom.dataset.errorVisible = "true";
     formValidate = false; 
-  }else {
+  } else {
     erreurMessageNom.dataset.errorVisible = "false";
   }
 
