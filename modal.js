@@ -204,6 +204,8 @@ function initialise() {
   for (let i = 0; i < choixTournois.length; i++) {
     choixTournois[i].checked = false;
   }
+
+  document.forms["reserve"].elements["news"].checked = false;
 }
 
 // Validate form
