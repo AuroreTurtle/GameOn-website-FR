@@ -2,6 +2,7 @@
 Ce projet a été réalisé en mars 2022 lors de ma formation de développeur front-end chez OpenClassrooms.
 
 ## Scénario :
+
 <p align="center">
   <img src="image/Logo.png">
 </p> 
@@ -51,4 +52,4 @@ L’équipe de QA veut que je :
 
 
 ## Lien vers la page :
-
+https://auroreturtle.github.io/GameOn-website-FR/
