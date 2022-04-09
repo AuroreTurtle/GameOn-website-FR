@@ -13,57 +13,30 @@ const btnThank = document.querySelector(".closeThank");
 let prenom = document.forms["reserve"].elements["firstname"];
 const erreurMessagePrenom = prenom.parentNode;
 
-// console.log(prenom);
-// console.log(prenom.value.length);
-// console.log(prenom.parentNode);
-
 // For the lastname
 let nom = document.forms["reserve"].elements["lastname"];
 const erreurMessageNom = nom.parentNode;
-
-// console.log(nom);
-// console.log(nom.value.length);
-// console.log(nom.parentNode);
 
 // For the email
 let mail = document.forms["reserve"].elements["email"];
 const erreurMessageMail = mail.parentNode;
 
-// console.log(mail);
-// console.log(mail.value);
-// console.log(mail.parentNode);
-
 // For the birthdate
 let dateNaissance = document.forms["reserve"].elements["birthdate"];
 const erreurMessageDate = dateNaissance.parentNode;
-
-// console.log(dateNaissance);
-// console.log(dateNaissance.value);
-// console.log(dateNaissance.parentNode);
 
 // For the number of tournaments
 let nombreTournois = document.forms["reserve"].elements["quantity"];
 const erreurMessageNbTournois = nombreTournois.parentNode;
 
-// console.log(nombreTournois);
-// console.log(nombreTournois.value);
-// console.log(nombreTournois.parentNode);
-
 // For the choice of tournaments
 let choixTournois = document.forms["reserve"].elements["location"];
 const erreurMessageTournois = choixTournois[0].parentNode;
-
-// console.log(choixTournois);
-// console.log(choixTournois[0]);
-// console.log(choixTournois.value);
-// console.log(choixTournois[2].parentNode);
 
 // For terms of use
 let conditionUtilisation = document.forms["reserve"].elements["condition"];
 const erreurMessageCondition = conditionUtilisation.parentNode;
 
-// console.log(conditionUtilisation);
-// console.log(conditionUtilisation.parentNode);
 
 ////////////////////////////////////////////////////////////////
 /* Add the class "responsive" to the topnav element if it is not already there */
@@ -75,6 +48,7 @@ function editNav() {
     x.className = "topnav";
   }
 }
+
 
 /////////////////////////// Modal //////////////////////////////////////
 // launch modal event
@@ -106,6 +80,7 @@ btnThank.addEventListener("click", function () {
   modalbg.style.display = "none";
 });
 
+
 /////////////////////////// Form //////////////////////////////////////
 // Check form
 /*
@@ -126,6 +101,7 @@ function validate(e) {
 
   // Regex
   const newRegex = /^[A-Za-z\u00C0-\u00FF]+[ \-']?[[A-Za-z\u00C0-\u00FF]+$/;
+  const mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   // const dateRegex = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/g;
 
   if (prenom.value.length < 2 || newRegex.test(prenom.value) === false) {
@@ -142,28 +118,28 @@ function validate(e) {
     erreurMessageNom.dataset.errorVisible = "false";
   }
 
-  if (mail.value == "") {
+  if (mail.value === "" || mailRegex.test(mail.value) === false) {
     erreurMessageMail.dataset.errorVisible = "true";
     formValidate = false;
   } else {
     erreurMessageMail.dataset.errorVisible = "false";
   }
 
-  if (dateNaissance.value == "") {
+  if (dateNaissance.value === "") {
     erreurMessageDate.dataset.errorVisible = "true";
     formValidate = false;
   } else {
     erreurMessageDate.dataset.errorVisible = "false";
   }
 
-  if (nombreTournois.value == "" || typeof nombreTournois === "number") {
+  if (nombreTournois.value === "" || typeof nombreTournois === "number") {
     erreurMessageNbTournois.dataset.errorVisible = "true";
     formValidate = false;
   } else {
     erreurMessageNbTournois.dataset.errorVisible = "false";
   }
 
-  if (choixTournois.value == "") {
+  if (choixTournois.value === "") {
     erreurMessageTournois.dataset.errorVisible = "true";
     formValidate = false;
   } else {
@@ -207,6 +183,7 @@ function initialise() {
 
   document.forms["reserve"].elements["news"].checked = false;
 }
+
 
 // Validate form
 /*
